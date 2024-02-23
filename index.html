@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="Estructura">
+
+        <button class="Redirect" onclick="FunctionOnClick()">
+            <span>OnClick</span>
+        </button>
+        <br>
+        <button class="Redirect" oncontextmenu="FunctionContext()">
+            <span>Context</span>
+        </button>
+
+        <div id="popup" class="popup">
+            <span class="close" onclick="ClosePopUp()">&times;</span>
+            <p>Desarrollo Web</p>
+        </div>
+
+        <br>
+        <button class="Redirect" ondblclick="FunctionOnDbClick()">
+            <span>OnDbClick</span>
+        </button>
+        <br>
+        <button class="Redirect" id="Mantener" onmousedown="FunctionDown(this)">
+            <span>Down</span>
+        </button>
+        <br>
+        <button class="Redirect" id="Aumentar" onmouseenter="FunctionEnter()">
+            <span>Enter</span>
+        </button>
+        <br>
+        <button class="Redirect" id="Disminuir" onmouseleave="FunctionLeave()">
+            <span>Leave</span>
+        </button>
+        <br>
+        <button class="Redirect" id="Mover" onmousemove="FunctionMove('lightblue')" onmouseout="FunctionMove('')">
+            <span>Move</span>
+        </button>
+        <br>
+        <button class="Redirect" onmouseout="FunctionOut()">
+            <span>Out</span>
+        </button>
+        <br>
+        <button class="Redirect" onmouseover="FunctionOver()">
+            <span>over</span>
+        </button>
+        <br>
+        <button class="Redirect" onmouseup="FunctionUp()">
+            <span>Up</span>
+        </button>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
