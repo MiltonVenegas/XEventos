@@ -15,9 +15,12 @@ function FunctionOnDbClick() {
     console.log("Hecho");
 }
 
-function FunctionDown(button) {
-    button.style.backgroundColor = "lightblue";
+function FunctionDown() {
+    document.getElementById("Mantener").classList.add("active");
+}
 
+function FunctionUp(){
+    document.getElementById("Mantener").classList.remove("active");
 }
 
 function FunctionEnter() {
@@ -29,14 +32,22 @@ function FunctionLeave() {
     var boton = document.getElementById("Disminuir");
     boton.style.transform = "scale(0.5)";
 }
+function FunctionMove(color) {
+    document.getElementById("Mover").style.backgroundColor = color;
+  }
 
-function FunctionMove() {
-    var button = document.getElementById("Mover");
-    button.style.backgroundColor = color;
+function FunctionOut(){
+    var mensaje = document.getElementById("Mensaje");
+    mensaje.style.display = "block";
+}
+function FunctionOver(){
+    var mensaje = document.getElementById("Mensaje");
+    mensaje.style.display = "none";
 }
 
 
 /* Funciones internas */
+
 function ClosePopUp() {
     var popUp = document.getElementById("popup");
     popUp.style.display = "none";
@@ -52,9 +63,40 @@ function Aletoriedad() {
     return Color;
 }
 
+/* Eventos ScrollDown && ScrollUp */ 
+
+var contador = 0;
+var Top = 0;
+var Elemento = document.getElementById("contador");
+
+window.addEventListener("scroll", function() {
+    var Barra = window.pageYOffset || document.documentElement.scrollTop;
+    if (Barra > Top) {
+        // Scroll hacia abajo
+        contador++;
+        if (Elemento.style.display !== 'none') {
+            Elemento.innerText = contador;
+        }
+    } else {
+        // Scroll hacia arriba
+        contador--;
+        if (Elemento.style.display !== 'none') {
+            Elemento.innerText = contador;
+        }
+    }
+    Top = Barra;
+}, false);
+
+function MostrarContador(action) {
+    if (action === 'Mostrar') {
+        Elemento.style.display = 'block';
+    } else if (action === 'Esconder') {
+        Elemento.style.display = 'none';
+    }
+}
 
 
-
+/* Anotacion importante, el contador no es preciso, depende de los perifericos del equipo */
 
 
 
